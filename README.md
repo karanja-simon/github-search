@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/react-boilerplate/react-boilerplate-brand/master/assets/banner-metal-optimized.jpg" alt="react boilerplate banner" align="center" />
+<img src="https://grantwinney.com/content/images/2017/03/git-banner.jpg" alt="react boilerplate banner" align="center" />
 
 <br />
 
