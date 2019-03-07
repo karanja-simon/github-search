@@ -9,20 +9,40 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 
 import HomePage from 'containers/HomePage/Loadable';
+import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 import GlobalStyle from '../../global-styles';
 
+const AppWrapper = styled.div`
+  max-width: calc(768px + 16px * 2);
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  padding: 0 16px;
+  flex-direction: column;
+`;
+
 export default function App() {
   return (
-    <div>
+    <AppWrapper>
+      <Helmet titleTemplate="%s - Github Search" defaultTitle="Github Search">
+        <meta name="description" content="A React.js Boilerplate application" />
+      </Helmet>
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/features" component={FeaturePage} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
       <GlobalStyle />
-    </div>
+    </AppWrapper>
   );
 }
